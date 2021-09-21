@@ -1,18 +1,19 @@
-import React, { PureComponent } from 'react';
-import PropTypes from 'prop-types';
 import {
-  Text,
-  TouchableWithoutFeedback,
-  TouchableOpacity,
-  TextInput,
   Animated,
   Dimensions,
-  Keyboard,
   Image,
+  Keyboard,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
   View,
-  ViewPropTypes,
-  StyleSheet
+  ViewPropTypes
 } from 'react-native';
+import React, { PureComponent } from 'react';
+
+import PropTypes from 'prop-types';
 
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
 
@@ -313,7 +314,8 @@ class Search extends PureComponent {
             },
             {
               width: this.inputFocusWidthAnimated,
-              [isRtl ? 'paddingRight' : 'paddingLeft']: this.inputFocusPlaceholderAnimated
+              // [isRtl ? 'paddingRight' : 'paddingLeft']: this.inputFocusPlaceholderAnimated => initial code
+              [isRtl ? 'paddingRight' : 'paddingLeft']: 25
             },
             this.props.shadowVisible && {
               shadowOffset: {
@@ -360,7 +362,8 @@ class Search extends PureComponent {
                   tintColor: this.props.tintColorSearch
                 },
                 {
-                  left: this.iconSearchAnimated
+                  // left: this.iconSearchAnimated => initial code
+                  left:10
                 }
               ]}
             />}
